@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз риска сердечного приступа</title>
+    <link rel="icon" href="../static/faviconv2.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Прогноз риска сердечного приступа</h1>
+        <p>Введите свои данные ниже, чтобы узнать вероятность сердечного приступа.</p>
+        <form id="prediction-form" method="POST" action="/predict">
+            <div class="form-group">
+                <label for="age">Возраст (в годах):</label>
+                <input type="number" id="age" name="age" step="1" min="0" max="120" required>
+            </div>
+            <div class="form-group">
+                <label for="sex">Пол:</label>
+                <select id="sex" name="sex" required>
+                    <option value="0">Женский</option>
+                    <option value="1">Мужской</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cp">Тип боли в груди:</label>
+                <select id="cp" name="cp" required>
+                    <option value="1">Типичная стенокардия</option>
+                    <option value="2">Атипичная стенокардия</option>
+                    <option value="3">Боль не связана со стенокардией</option>
+                    <option value="4">Бессимптомно</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="trtbps">Систолическое артериальное давление в состоянии покоя (мм рт. ст.):</label>
+                <input type="number" id="trtbps" name="trtbps" step="1" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="chol">Уровень холестерина (мг/децилитр):</label>
+                <input type="number" id="chol" name="chol" step="0.01" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="fbs">Уровень сахара в крови:</label>
+                <select id="fbs" name="fbs" required>
+                    <option value="0">Ниже 120 мг/децилитр</option>
+                    <option value="1">Выше 120 мг/децилитр</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="restecg">Результаты электрокардиограммы:</label>
+                <select id="restecg" name="restecg" required>
+                    <option value="0">Норма</option>
+                    <option value="1">Аномалия волны ST-T</option>
+                    <option value="2">Признаки гипертрофии левого желудочка</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="thalachh">Максимальная частота сердечных сокращений, во время нагрузочного теста (уд/мин):</label>
+                <input type="number" id="thalachh" name="thalachh" step="1" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="exng">Наличие физической нагрузки:</label>
+                <select id="exng" name="exng" required>
+                    <option value="0">Нет</option>
+                    <option value="1">Да</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="oldpeak">Депрессия ST ЭКГ (в мВ):</label>
+                <input type="number" id="oldpeak" name="oldpeak" step="0.01" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="slp">Наклон сегмента ST:</label>
+                <select id="slp" name="slp" required>
+                    <option value="1">Горизонтальный</option>
+                    <option value="2">Восходящий</option>
+                    <option value="3">Нисходящий</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="caa">Количество крупных сосудистых заболеваний:</label>
+                <select id="caa" name="caa" required>
+                    <option value="0">Ни один сосуд (норма)</option>
+                    <option value="1">Один крупный сосуд</option>
+                    <option value="2">Два крупных сосуда</option>
+                    <option value="3">Три крупных сосуда</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="thall">Уровень талассемии:</label>
+                <select id="thall" name="thall" required>
+                    <option value="1">Нормальный</option>
+                    <option value="2">Фиксированный дефект</option>
+                    <option value="3">Обратимый дефект</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit"><i class="fas fa-cogs"></i> Предсказать</button>
+            </div>
+        </form>
+        <div id="result">
+            <p>Результат предсказания появится здесь.</p>
+        </div>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>

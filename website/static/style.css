@@ -1,0 +1,163 @@
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Уменьшаем ширину контейнера */
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 22px; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    p {
+        font-size: 14px; /* Уменьшаем размер шрифта для текста */
+    }
+
+    input, select, button {
+        font-size: 14px; /* Уменьшаем размер шрифта в полях ввода */
+        padding: 10px; /* Уменьшаем отступы */
+    }
+
+    button {
+        font-size: 14px; /* Уменьшаем размер шрифта на кнопке */
+    }
+}
+
+/* Для устройств с шириной экрана меньше 480px (мобильные телефоны) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Еще больше уменьшаем ширину контейнера */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px; /* Меньше заголовок */
+    }
+
+    p {
+        font-size: 12px; /* Меньше текст */
+    }
+
+    input, select, button {
+        font-size: 12px; /* Уменьшаем размер шрифта в полях ввода */
+        padding: 8px; /* Еще меньше отступы */
+    }
+
+    button {
+        font-size: 14px; /* Уменьшаем размер шрифта на кнопке */
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('fon.jpg') no-repeat center center fixed;
+    background-size: cover; /* Масштабируем изображение по размеру экрана */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff; /* Белый цвет текста */
+}
+
+
+.container {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Используем ширину в процентах */
+    max-width: 550px; /* Ограничиваем максимальную ширину */
+    max-height: 90vh; /* Максимальная высота */
+    overflow-y: auto;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px; /* Увеличенные отступы для равномерного размера */
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #2a2a2a; /* Темный фон для полей ввода */
+    color: #fff;
+    box-sizing: border-box; /* Для учета padding */
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #6a11cb; /* Яркая граница при фокусе */
+}
+
+button {
+    background: #6a11cb;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 12px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #2575fc; /* Изменение цвета при наведении */
+}
+
+button i {
+    margin-right: 8px;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/* Для всех браузеров, которые поддерживают scrollbar-color */
+::-webkit-scrollbar {
+    width: 10px; /* Ширина полосы прокрутки */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6a11cb; /* Цвет бегунка */
+    border-radius: 5px; /* Скругленные края */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2575fc; /* Цвет бегунка при наведении */
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2a; /* Цвет фона полосы прокрутки */
+}
+
+
+
+
