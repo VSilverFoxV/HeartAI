@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 import numpy as np
 import joblib
+import os
 
 # Пути к модели
-MODEL_PATH = "../heart_neural_network/heart_disease_model.joblib"
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "heart_neural_network", "heart_disease_model.joblib")
 
 # Загрузка модели
 model = joblib.load(MODEL_PATH)
@@ -56,6 +57,9 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+def run_app():
+    """Функция для запуска приложения через точку входа"""
+    app.run(debug=False, host='0.0.0.0')
 
 if __name__ == "__main__":
     app.run(debug=True)

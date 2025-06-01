@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "HeartAI"
+version = "0.1.0"
+authors = [
+    {name = "Величко В.Д.", email = "example@example.com"},
+]
+description = "Нейронная сеть для прогноза риска сердечного приступа"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "tensorflow",
+    "joblib",
+    "flask",
+    "gunicorn",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/VSilverFoxV/HeartAI"
+"Bug Tracker" = "https://github.com/VSilverFoxV/HeartAI/issues"
+"Documentation" = "https://heartai.readthedocs.io/"
+
+[project.scripts]
+heart-web = "website.app:run_app"
+heart-train = "heart_neural_network.train_model:train"
+heart-predict = "heart_neural_network.predict_model:cli_predict"
+
+[project.optional-dependencies]
+docs = [
+    "sphinx>=8.0.0",
+    "sphinx-rtd-theme>=3.0.0",
+    "numpydoc>=1.5.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["heart_neural_network", "website"]
+
+[tool.setuptools.package-data]
+heart_neural_network = ["*.csv", "*.joblib"]
+website = ["templates/*", "static/*"] 
