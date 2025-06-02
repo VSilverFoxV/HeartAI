@@ -4,7 +4,7 @@ import joblib
 import os
 
 # Пути к модели
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "heart_neural_network", "heart_disease_model.joblib")
+MODEL_PATH = os.environ.get('MODEL_PATH', os.path.join(os.path.dirname(__file__), "..", "heart_neural_network", "heart_disease_model.joblib"))
 
 # Загрузка модели
 model = joblib.load(MODEL_PATH)
